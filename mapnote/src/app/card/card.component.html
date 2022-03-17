@@ -1,1 +1,15 @@
-<p>card works!</p>
+<div class="card">
+    <!-- <p class="name" [cardData]="name"></p> -->
+    <p class="name">{{name}}</p>
+
+    <div *ngIf="paymentSystem === 'visa'" class="paymentSystem visa">
+        
+    </div>
+    <div *ngIf="paymentSystem === 'mastercard'" class="paymentSystem mastercard">
+        
+    </div>
+
+    <p class="number">{{number}}</p>
+    <p class="amount">{{amount}}</p>
+    <p class="expirationDate">{{expirationDate}}</p>
+</div>

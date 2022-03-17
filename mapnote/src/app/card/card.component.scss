@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 237px;
+    height: 130px;
+    padding: 12px 11px 9px 11px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+
+    color: #ffffff;
+    background-color: #0094FF;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 7px;
+}
+.p {
+    font-size: 12px;
+    line-height: 14px;   
+}
+.number {
+    width: 100%;
+}
+.amount {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    min-width: 70px;
+}
+.paymentSystem{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    max-height: 18px;
+}
+.visa {
+    background-image: url(./visa.png);
+    width: 27px;
+    height: 9px;
+}
+.mastercard {
+    background-image: url(./mastercard.png);
+    width: 27px;
+    height: 18px;
+}
