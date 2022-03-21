@@ -5,3 +5,11 @@
   expirationDate = "08/33"
   paymentSystem = "visa"
 ></app-card>
+
+<p appDirective [value]="myAttrs">
+  current id1: {{myAttrs.id1}}
+  <br>
+  current id2: {{myAttrs.id2}}
+</p>
+
+<button (click)="onClick()">click here to change the [value]</button>
