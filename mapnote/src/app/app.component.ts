@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, VERSION } from '@angular/core';
+import { TimerService } from './timer.service';
 
 
 @Component({
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'mapnote';
 
   public myAttrs = {
@@ -24,5 +25,16 @@ export class AppComponent {
   public randomInt = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
+  
+  // hw 5 service and DI
+  name = 'Angular ' + VERSION.major;
+  constructor(private timerService: TimerService) {}
+
+  public ngAfterViewInit() {
+    this.timerService.start();
+  }
+
+  
 }
 
