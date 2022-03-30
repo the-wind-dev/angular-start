@@ -11,6 +11,10 @@ import { TimerService } from './timer.service';
 
 import { DOCUMENT, SET_INTERVAL } from './token'
 
+import { ReactiveFormsModule } from '@angular/forms';
+// import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProductFormComponent } from './product-form/product-form.component';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +23,11 @@ import { DOCUMENT, SET_INTERVAL } from './token'
     AppDirectiveDirective,
     CurrencyPipe,
     HelloComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
   ],
   providers: [
     TimerService,

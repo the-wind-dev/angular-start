@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, VERSION } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { TimerService } from './timer.service';
 
 
@@ -29,7 +29,7 @@ export class AppComponent implements AfterViewInit{
   
   // hw 5 service and DI
   constructor(private timerService: TimerService) {}
-
+  name = 'Timer';
   public ngAfterViewInit() {
     this.timerService.start();
   }
