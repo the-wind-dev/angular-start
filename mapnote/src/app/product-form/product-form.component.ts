@@ -8,60 +8,31 @@ import { FormControl, FormArray, FormGroup, Validators } from '@angular/forms';
 })
 export class ProductFormComponent{
 
-  formId = '10';
-
-  product: Product = {
-    name: 'default name',
-    price: null,
-    id: 'default id',
-    categories: [],
-  }
-  
-
   productFormGroup = new FormGroup({
-    name: new FormControl(this.product.name, [Validators.required, Validators.minLength(4)] ),
-    price: new FormControl(this.product.price, [Validators.required, Validators.min(0) ]),
-    id: new FormControl(this.product.id, Validators.required),
+    name: new FormControl('default name', [Validators.required, Validators.minLength(4)] ),
+    price: new FormControl(null, [Validators.required, Validators.min(0) ]),
+    id: new FormControl('default id', Validators.required),
     categories: new FormControl([]),
   })
 
-  
-  refreshProduct() {
-    for (let key in this.product) {
-      this.product[key] =  this.productFormGroup.controls[key].value;
-    }
-  }
-
-  onSubmit() {
-    this.refreshProduct();
+  onSubmit(): void {
+    
     if (this.productFormGroup.invalid) {
       alert('form is invalid')
+
     } else {
-      
-      console.log(this.product);
+      console.log(this.productFormGroup.value);
     }
-    
-    // this.makeProduct();
-    console.log(this.product);
-    // console.log(this.productFormGroup.controls);
-    
 
+    // console.log(this.productFormGroup.value);
   }
-  generateID() {
-    this.product.id = Math.ceil(Math.random() * 100).toString();
-    // this.formId = Math.ceil(Math.random() * 100).toString();
-
-    // this.refreshProduct();
-    console.log(this.product.id);
-    // console.log(this.productFormGroup.controls.id.value);
-    // console.log(this.product);
+  randomStrOfNumbers(): string {
+    return Math.ceil(Math.random() * 100).toString();
+  }
+  generateID(): void {
+    
+    console.dir(this.productFormGroup);
+    this.productFormGroup.patchValue( {id: this.randomStrOfNumbers() });
   }
   
-}
-
-interface Product {
-  name: string,
-  price: number,
-  id: string,
-  categories: string[],
 }

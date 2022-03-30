@@ -12,7 +12,9 @@
     <br/>
 
     <label for="id">id: </label>
-    <input id="id" type="text" formControlName="id" [(ngModel)]="this.product.id"/>
+    <!-- <input id="id" type="text" formControlName="id" [(ngModel)]="this.productFormGroup.controls.id"/> -->
+    <!-- <input id="id" type="text" formControlName="id" value="{{this.productFormGroup.controls.id.value}}"/> -->
+    <input id="id" type="text" formControlName="id" />
     <br>
     <button type="button" (click)="generateID()">Generate ID </button>
 
