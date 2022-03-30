@@ -28,7 +28,6 @@ export class AppComponent implements AfterViewInit{
 
   
   // hw 5 service and DI
-  name = 'Angular ' + VERSION.major;
   constructor(private timerService: TimerService) {}
 
   public ngAfterViewInit() {
