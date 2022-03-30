@@ -1,17 +1,18 @@
 <form [formGroup]="productFormGroup">
+    
     <label for="name">Name: </label>
     <input id="name" type="text" formControlName="name"/>
     <br/>
     <br/>
 
     <label for="price">price: </label>
-    <input id="price" type="text" formControlName="price"/>
+    <input id="price" type="number" formControlName="price"/>
     
     <br/>
     <br/>
 
     <label for="id">id: </label>
-    <input id="id" type="text" formControlName="id" value="{{formId}}"/>
+    <input id="id" type="text" formControlName="id" [(ngModel)]="this.product.id"/>
     <br>
     <button type="button" (click)="generateID()">Generate ID </button>
 
@@ -29,7 +30,7 @@
 
     <br/>
     <br/>
-    
+
     <button type="button" (click)="onSubmit()" >Submit</button>
 </form>
 
