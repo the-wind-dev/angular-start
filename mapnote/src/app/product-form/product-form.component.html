@@ -1,0 +1,40 @@
+<form [formGroup]="productFormGroup">
+    
+    <label for="name">Name: </label>
+    <input id="name" type="text" formControlName="name"/>
+    <br/>
+    <br/>
+
+    <label for="price">price: </label>
+    <input id="price" type="number" formControlName="price"/>
+    
+    <br/>
+    <br/>
+
+    <label for="id">id: </label>
+    <!-- <input id="id" type="text" formControlName="id" [(ngModel)]="this.productFormGroup.controls.id"/> -->
+    <!-- <input id="id" type="text" formControlName="id" value="{{this.productFormGroup.controls.id.value}}"/> -->
+    <input id="id" type="text" formControlName="id" />
+    <br>
+    <button type="button" (click)="generateID()">Generate ID </button>
+
+    <br/>
+    <br/>
+
+    <label for="categories">category: </label>
+    <select id="categories"  formControlName="categories">
+        <option value="Cloth">Cloth</option>
+        <option value="Shoes">Shoes</option>
+        <option value="Medications">Medications</option>
+        <option value="Food">Food</option>
+        <option value="Electronics">Electronics</option>
+    </select>
+
+    <br/>
+    <br/>
+
+    <button type="button" (click)="onSubmit()" >Submit</button>
+</form>
+
+
+
